@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="language" content="en">
+    <title>Steal A Brainrot Club - Ultimate Gaming Community | Play Free Online</title>
+    <meta name="description" content="Join Steal A Brainrot Club - the ultimate gaming community! Play Steal Brainrot Online, a fast-paced heist game where you collect rare Brainrot memes like Tralalero Tralala and Cappuccino Assassino. Connect with players worldwide!">
+    <meta name="keywords" content="steal a brainrot club, steal a brainrot, steal a brainrot game, steal a brainrot online, brainrot gaming community, brainrot meme game, steal brainrot online">
+    <link rel="canonical" href="https://stealabrainrot.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Steal A Brainrot Club - Ultimate Gaming Community">
+    <meta property="og:description" content="Join Steal A Brainrot Club - the ultimate gaming community! Play, connect, and compete with players worldwide in the most addictive brainrot game.">
+    <meta property="og:url" content="https://stealabrainrot.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Steal A Brainrot Club">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Steal A Brainrot Club - Ultimate Gaming Community">
+    <meta name="twitter:description" content="Join Steal A Brainrot Club - the ultimate gaming community! Play, connect, and compete with players worldwide in the most addictive brainrot game.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-gray': '#8E8E93',
+                        'apple-light-gray': '#F2F2F7',
+                        'apple-dark': '#1C1C1E',
+                        'apple-green': '#34C759',
+                        'apple-orange': '#FF9500',
+                        'apple-red': '#FF3B30'
+                    },
+                    fontFamily: {
+                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(28, 28, 30, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 16/9;  /* 保持16:9比例，更适合移动端游戏 */
+                max-height: 80vh;     /* 增加高度占比，确保显示完整内容 */
+                max-width: 100%;
+                margin: 0 auto;
+                min-height: 350px;    /* 增加最小高度，确保按钮可见 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game-container {
+                aspect-ratio: 16/9;
+                max-height: 85vh;     /* 小屏幕上更大的高度，确保内容完整 */
+                max-width: 100%;
+                margin: 0 auto;
+                min-height: 320px;    /* 增加最小高度 */
+            }
+        }
+
+        .language-notice {
+            background: linear-gradient(135deg, #FF9500, #FF3B30);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .game-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .game-container {
+                max-width: 95%;
+            }
+        }
+
+        /* 隐藏CrazyGames底部控制栏 */
+        .game-container {
+            position: relative;
+            overflow: hidden;
+            --bottom-mask-height: 60px;  /* CSS变量，可动态调整 */
+        }
+
+        .game-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: var(--bottom-mask-height);  /* 使用CSS变量 */
+            background: #000;
+            z-index: 10;
+            pointer-events: none;
+            transition: height 0.3s ease;  /* 平滑过渡效果 */
+        }
+
+        /* 为iframe添加负边距来隐藏底部 */
+        .game-container iframe {
+            margin-bottom: calc(-1 * var(--bottom-mask-height));
+            height: calc(100% + var(--bottom-mask-height));
+            transition: margin-bottom 0.3s ease, height 0.3s ease;  /* 平滑过渡 */
+        }
+
+        /* 移动端调整覆盖高度 - 减少遮挡以显示完整游戏内容 */
+        @media (max-width: 768px) {
+            .game-container {
+                --bottom-mask-height: 25px;  /* 移动端默认遮挡高度 */
+                touch-action: manipulation;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                user-select: none;
+            }
+
+            /* 移动端游戏区域优化 */
+            .game-wrapper {
+                padding: 0 8px;  /* 移动端添加小边距 */
+            }
+        }
+
+        /* 超小屏幕优化 */
+        @media (max-width: 360px) {
+            .game-container {
+                max-height: 90vh;     /* 超小屏幕给更多空间 */
+                min-height: 300px;    /* 确保最小高度足够显示按钮 */
+                --bottom-mask-height: 15px;  /* 超小屏幕几乎不遮挡底部 */
+            }
+        }
+
+        /* 全屏模式优化 */
+        .game-container:fullscreen {
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: none !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            border-radius: 0 !important;
+        }
+
+        .game-container:-webkit-full-screen {
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: none !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            border-radius: 0 !important;
+        }
+
+        .game-container:-moz-full-screen {
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: none !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            border-radius: 0 !important;
+        }
+
+        /* 全屏模式下的iframe */
+        .game-container:fullscreen iframe,
+        .game-container:-webkit-full-screen iframe,
+        .game-container:-moz-full-screen iframe {
+            width: 100% !important;
+            height: 100% !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* 全屏模式下的控制按钮位置调整 */
+        .game-container:fullscreen .absolute,
+        .game-container:-webkit-full-screen .absolute,
+        .game-container:-moz-full-screen .absolute {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 9999 !important;
+        }
+
+        /* 游戏控制按钮样式优化 */
+        .game-control-buttons {
+            /* 确保按钮在游戏区域内可见 */
+            pointer-events: auto;
+        }
+
+        /* 全屏按钮样式 */
+        #fullscreen-btn {
+            font-size: 16px;
+            line-height: 1;
+            min-width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fullscreen-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 移动端按钮位置调整 */
+        @media (max-width: 768px) {
+            .game-control-buttons {
+                bottom: 8px !important;
+                right: 8px !important;
+                gap: 8px !important;
+            }
+
+            .game-control-buttons button {
+                padding: 8px !important;
+                font-size: 14px !important;
+            }
+        }
+
+        /* CrazyGames移动端样式适配 */
+        .GameContainerMobile_gameIframe__kYvt0 {
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+
+        .bs-GameContainer--game {
+            display: block !important;
+            position: relative !important;
+        }
+
+        /* 游戏控制按钮样式优化 */
+        .game-control-btn {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-control-btn:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-control-btn:active {
+            transform: scale(0.95) !important;
+        }
+
+        /* 移动端启动界面样式 */
+        #mobile-game-launcher {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        #mobile-game-launcher button {
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #mobile-game-launcher button:active {
+            transform: scale(0.98);
+        }
+
+        /* 移动端特殊优化 - 确保游戏内容完整显示 */
+        @media (max-width: 768px) {
+            .game-container[data-mobile="true"] {
+                --bottom-mask-height: 0px !important;  /* 移动端不遮挡任何内容 */
+            }
+
+            .game-container[data-mobile="true"] iframe {
+                margin-bottom: 0 !important;
+                height: 100% !important;
+            }
+
+            .game-container[data-mobile="true"]::after {
+                display: none !important;  /* 完全隐藏遮挡层 */
+            }
+
+            /* 移动端启动界面适配 */
+            #mobile-game-launcher {
+                min-height: 400px;
+                padding: 20px;
+            }
+
+            /* 移动端游戏控制按钮优化 */
+            .game-control-btn {
+                min-width: 48px;
+                min-height: 48px;
+            }
+
+            @media (max-width: 480px) {
+                .game-control-btn {
+                    padding: 12px !important;
+                }
+
+                .game-control-btn span {
+                    font-size: 14px;
+                }
+            }
+        }
+    </style>
+</head>
+<body class="font-sf bg-apple-light-gray dark:bg-apple-dark text-gray-900 dark:text-white">
+    <!-- Navigation -->
+    <nav class="glass-effect sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">
+                        <img src="logo.svg" alt="Steal A Brainrot Club" class="h-14 w-auto">
+                    </a>
+                    <div class="hidden sm:block">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400 to-green-500 bg-clip-text text-transparent">
+                            Steal A Brainrot Club
+                        </h1>
+                        <p class="text-sm text-apple-gray font-medium">The Ultimate Gaming Community</p>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-apple-blue font-medium">Home</a>
+                        <a href="blog.html" class="text-apple-gray hover:text-apple-blue transition-colors">Blog</a>
+                        <a href="contact.html" class="text-apple-gray hover:text-apple-blue transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-apple-gray hover:text-apple-blue">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-apple-blue to-apple-green bg-clip-text text-transparent">
+                Steal A Brainrot
+            </h1>
+            <p class="text-xl md:text-2xl text-apple-gray mb-8 max-w-3xl mx-auto">
+                The ultimate steal a brainrot game! Collect rare brainrot memes, steal a brainrot from other players worldwide, and protect your collection with advanced strategies.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#game" class="bg-apple-blue text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-600 transition-colors">
+                    Play Now - Free
+                </a>
+                <a href="#guide" class="border-2 border-apple-blue text-apple-blue px-8 py-4 rounded-full font-semibold hover:bg-apple-blue hover:text-white transition-colors">
+                    Learn How to Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile Optimization Notice -->
+            <div class="md:hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-2xl mb-6 text-center">
+                <p class="font-bold text-lg">📱 Mobile Optimization</p>
+                <p class="text-sm mt-1">Choose your preferred way to play steal a brainrot on mobile below.</p>
+                <p class="text-xs mt-2 text-blue-100">Multiple options available for the best experience.</p>
+            </div>
+
+            <!-- Language and Connection Notice -->
+            <div class="language-notice text-white p-4 rounded-2xl mb-6 text-center">
+                <p class="font-semibold">🌍 Language Notice: If the steal a brainrot game appears in a different language, it may be due to your browser/location settings. The game will work normally regardless of language.</p>
+                <p class="text-sm mt-2">💡 Connection Tip: If you see a connection error popup, click "Continue Offline" to play steal a brainrot normally.</p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden">
+                <div class="p-6 md:p-8">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Play Steal A Brainrot Online</h2>
+                    <div class="game-wrapper">
+                        <div class="game-container relative bg-black rounded-2xl overflow-hidden">
+                        <!-- Mobile Game Launcher (显示在移动端) -->
+                        <div id="mobile-game-launcher" class="md:hidden absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex flex-col items-center justify-center z-40">
+                            <!-- Game Logo/Title -->
+                            <div class="text-center mb-6">
+                                <h2 class="text-4xl font-bold text-white mb-2">🧠 Steal A Brainrot</h2>
+                                <p class="text-purple-200 text-lg mb-3">Collect rare memes and build your collection!</p>
+                                <div class="bg-yellow-500 bg-opacity-20 border border-yellow-400 rounded-lg p-3 text-sm text-yellow-100">
+                                    <p class="font-semibold">📱 Mobile Optimization Notice</p>
+                                    <p class="text-xs mt-1">For the best mobile experience, we recommend playing on CrazyGames directly. You can also try our embedded version below.</p>
+                                </div>
+                            </div>
+
+                            <!-- Game Preview Animation -->
+                            <div class="mb-8 relative">
+                                <div class="w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse flex items-center justify-center">
+                                    <span class="text-4xl">🎮</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full animate-bounce flex items-center justify-center">
+                                    <span class="text-sm">⭐</span>
+                                </div>
+                            </div>
+
+                            <!-- Play Buttons -->
+                            <div class="space-y-4 w-full max-w-xs px-4">
+                                <button id="mobile-play-now" onclick="redirectToCrazyGames()" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-4 px-8 rounded-xl text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                                    🚀 PLAY NOW
+                                </button>
+                                <button id="mobile-play-friends" onclick="redirectToCrazyGames('multiplayer')" class="w-full bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-bold py-3 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                                    👥 PLAY WITH FRIENDS
+                                </button>
+                                <button id="mobile-try-embedded" onclick="startMobileGame()" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold py-3 px-6 rounded-xl text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                                    📱 TRY EMBEDDED VERSION
+                                </button>
+                            </div>
+
+                            <!-- Game Features -->
+                            <div class="mt-8 text-center">
+                                <div class="flex justify-center space-x-6 text-purple-200">
+                                    <div class="text-center">
+                                        <div class="text-2xl mb-1">🏆</div>
+                                        <div class="text-xs">Compete</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl mb-1">🎯</div>
+                                        <div class="text-xs">Collect</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-2xl mb-1">⚡</div>
+                                        <div class="text-xs">Fast-Paced</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loading indicator -->
+                        <div id="game-loading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 z-30 hidden">
+                            <div class="text-center text-white">
+                                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-apple-blue mx-auto mb-4"></div>
+                                <p class="text-lg">Loading Steal Brainrot Online...</p>
+                                <p class="text-sm text-apple-gray mt-2">If connection issues occur, the game will continue offline</p>
+                            </div>
+                        </div>
+
+                        <!-- Game control buttons - moved to bottom -->
+                        <div class="game-control-buttons absolute bottom-4 right-4 z-20 flex gap-3 flex-wrap">
+                            <!-- Fullscreen button -->
+                            <button id="fullscreen-btn" onclick="toggleFullscreen()"
+                                    class="game-control-btn group bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-xl border border-white border-opacity-20 hover:border-opacity-40 transition-all duration-300 transform hover:scale-105"
+                                    title="Toggle Fullscreen (F11)">
+                                <span id="fullscreen-icon" class="text-lg group-hover:scale-110 transition-transform duration-200">⛶</span>
+                            </button>
+                            <!-- Game reload button (hidden by default) -->
+                            <button id="game-reload" onclick="reloadGame()"
+                                    class="game-control-btn group bg-black bg-opacity-60 hover:bg-opacity-80 text-white px-4 py-3 rounded-xl border border-white border-opacity-20 hover:border-opacity-40 transition-all duration-300 transform hover:scale-105 hidden"
+                                    title="Reload Game">
+                                <span class="flex items-center gap-2">
+                                    <span class="text-base group-hover:rotate-180 transition-transform duration-500">🔄</span>
+                                    <span class="text-sm font-medium">Reload</span>
+                                </span>
+                            </button>
+                        </div>
+
+                        <iframe
+                            id="game-iframe"
+                            src=""
+                            title="Steal Brainrot Online Game"
+                            class="w-full h-full border-0"
+                            allow="autoplay; payment; fullscreen; microphone; focus-without-user-activation *; screen-wake-lock; gamepad; clipboard-read; clipboard-write; accelerometer; gyroscope;"
+                            allowfullscreen
+                            sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads allow-popups allow-popups-to-escape-sandbox"
+                            loading="eager"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            data-hj-allow-iframe="true">
+                        </iframe>
+                        </div>
+                    </div>
+                    <p class="text-center text-apple-gray mt-4">
+                        <span class="hidden md:inline">🎮 WASD = move • Space = jump • E = interact • G = home button • ⛶ Fullscreen & reload buttons at bottom-right</span>
+                        <span class="md:hidden">📱 Tap "PLAY NOW" to start • Left joystick = move • Upward arrow = jump • Hand icon = interact • Control buttons at bottom-right</span>
+                    </p>
+
+                    <!-- Alternative Play Option -->
+                    <div class="text-center mt-6">
+                        <a href="https://www.crazygames.com/game/steal-brainrot-online" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <span class="mr-2">🚀</span>
+                            <span class="hidden md:inline">Play on CrazyGames (Alternative)</span>
+                            <span class="md:hidden">Play on CrazyGames (Recommended)</span>
+                        </a>
+                        <p class="text-sm text-apple-gray mt-2">
+                            <span class="hidden md:inline">Alternative option with full CrazyGames features</span>
+                            <span class="md:hidden">Best mobile experience with all features</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Description -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl">
+                <h2 class="text-3xl font-bold mb-6">About Steal A Brainrot Game</h2>
+                <p class="text-lg text-apple-gray mb-6 leading-relaxed">
+                    Steal A Brainrot is a fast-paced, casual heist game where you collect rare Brainrot memes like Tralalero Tralala and Cappuccino Assassino, straight from the popular Italian Brainrot Clicker Game. You can buy Brainrots from the red carpet, sneak into other players' bases to steal theirs, and protect your own with traps and locks.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-apple-blue">🎯 Game Features</h3>
+                        <ul class="space-y-2 text-apple-gray">
+                            <li>• Steal Brainrots from other players' bases</li>
+                            <li>• Buy Brainrots from the red carpet conveyor</li>
+                            <li>• Protect your collection with locks and shields</li>
+                            <li>• Use boosters to outbid opponents during deliveries</li>
+                            <li>• Climb the leaderboard for bigger rewards</li>
+                            <li>• Rebirth system for long-term progression</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-apple-green">⚡ Game Mechanics</h3>
+                        <ul class="space-y-2 text-apple-gray">
+                            <li>• Fast-paced multiplayer heist gameplay</li>
+                            <li>• Base infiltration and defense systems</li>
+                            <li>• Wealth accumulation and management</li>
+                            <li>• Hammer combat when caught stealing</li>
+                            <li>• Temporary shields (60-second protection)</li>
+                            <li>• Home teleport escape mechanism</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SEO Content Section -->
+                <div class="mt-8 p-6 bg-gradient-to-r from-apple-light-gray to-white dark:from-gray-700 dark:to-gray-800 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4 text-apple-blue">Why Steal A Brainrot is the Ultimate Brainrot Game</h3>
+                    <p class="text-apple-gray mb-4 leading-relaxed">
+                        When you want to <strong>steal a brainrot</strong>, this game offers the most authentic brainrot stealing experience available online. Unlike other brainrot games, our steal a brainrot gameplay focuses on real-time multiplayer action where every attempt to steal a brainrot creates genuine tension and excitement.
+                    </p>
+                    <p class="text-apple-gray leading-relaxed">
+                        Master the art of how to <strong>steal a brainrot</strong> effectively by learning stealth techniques, timing your raids perfectly, and building the ultimate brainrot collection. Whether you're new to brainrot games or a veteran looking to steal a brainrot from the best players, this game provides endless entertainment and strategic depth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Guide -->
+    <section id="guide" class="py-12 bg-gradient-to-br from-apple-light-gray to-white dark:from-apple-dark dark:to-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">How to Play Steal A Brainrot</h2>
+
+            <div class="space-y-8">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-apple-blue">🎯 Getting Started</h3>
+                    <p class="text-apple-gray mb-4">
+                        You begin with a small amount of money and a simple goal: accumulate as many Brainrots as possible. You can either purchase Brainrots from the endless conveyor of marching meme prisoners, or skip straight to the chaos by raiding someone else's base and snatching one for "free".
+                    </p>
+                    <div class="bg-apple-light-gray dark:bg-gray-700 rounded-lg p-4">
+                        <p class="font-medium">💡 Pro Tip: Start by purchasing a few Brainrots to build your initial collection and income stream before attempting risky heists on other players.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-apple-green">💰 Building Your Collection</h3>
+                    <p class="text-apple-gray mb-4">
+                        Once you steal a Brainrot, take it back to your base and place it proudly on a pillar, so that it slowly generates income as you will for more Brainrots. The more you collect, the faster your fortune grows - but with wealth comes a large target on your back.
+                    </p>
+                    <ul class="list-disc list-inside text-apple-gray space-y-2">
+                        <li>Each Brainrot generates passive income over time</li>
+                        <li>Rare memes like Tralalero Tralala and Cappuccino Assassino earn more</li>
+                        <li>Reinvest earnings in stronger defenses and more purchases</li>
+                        <li>Shields only last sixty seconds before burning out</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-apple-red">⚠️ Stealing Mechanics</h3>
+                    <p class="text-apple-gray mb-4">
+                        Stealing is both tempting and dangerous. To take someone else's Brainrot, you need to slip into their unlocked base, carry the prize on your back, and haul it to your own collection. But the act of stealing slows you down, strips away your item use, and instantly alerts the owner.
+                    </p>
+                    <div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                        <p class="font-medium text-red-800 dark:text-red-200">🚨 Important Tip: If you get caught stealing in someone else's base, use your home button (G on the keyboard) to transport you back home. You can't take the Brainrot with you this way, but you'll escape being hammered!</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-apple-orange">🥷 Stealing Mechanics</h3>
+                    <p class="text-apple-gray mb-4">
+                        The core excitement comes from stealing from other players. Sneak into unlocked bases, grab a Brainrot, and carry it back to your collection. But beware - stealing slows you down and alerts the owner!
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-apple-light-gray dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-apple-green mb-2">✅ Stealing Tips</h4>
+                            <ul class="text-sm text-apple-gray space-y-1">
+                                <li>• Check if bases are unlocked</li>
+                                <li>• Move quickly but carefully</li>
+                                <li>• Use the home button (G) to escape</li>
+                                <li>• Target high-value memes</li>
+                            </ul>
+                        </div>
+                        <div class="bg-apple-light-gray dark:bg-gray-700 rounded-lg p-4">
+                            <h4 class="font-semibold text-apple-red mb-2">⚠️ Defense Tips</h4>
+                            <ul class="text-sm text-apple-gray space-y-1">
+                                <li>• Use locks on your base</li>
+                                <li>• Activate shields (60s duration)</li>
+                                <li>• Chase thieves with your hammer</li>
+                                <li>• Set up traps strategically</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-4 text-apple-blue">🚀 Advanced Strategies</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Rebirth System</h4>
+                            <p class="text-apple-gray">Reset your progress to gain permanent bonuses and access to better rewards. Time your rebirths strategically for maximum benefit.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Auction Bidding</h4>
+                            <p class="text-apple-gray">Participate in delivery auctions to outbid other players for rare Brainrots. Save money for these special opportunities.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Booster Usage</h4>
+                            <p class="text-apple-gray">Use boosters wisely to enhance your stealing speed, income generation, or defensive capabilities during critical moments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">Steal A Brainrot Guides & Strategies</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-apple-blue to-apple-green flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🧠💎</div>
+                            <div class="text-sm font-medium">Rare Memes Guide</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Ultimate Guide to Rare Brainrot Memes</h3>
+                        <p class="text-apple-gray mb-4">Master the art of collecting legendary memes like Tralalero Tralala and Cappuccino Assassino. Learn their spawn rates, values, and optimal collection strategies for maximum profit.</p>
+                        <a href="article-rare-memes.html" class="text-apple-blue font-medium hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-apple-green to-apple-orange flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🥷⚡</div>
+                            <div class="text-sm font-medium">Stealth Mastery</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Pro Stealing Techniques & Avatar Strategies</h3>
+                        <p class="text-apple-gray mb-4">Discover advanced heist methods including small avatar stealth tactics, roof navigation techniques, and server selection strategies to maximize your stealing success rate.</p>
+                        <a href="article-stealing-techniques.html" class="text-apple-blue font-medium hover:underline">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-apple-orange to-apple-red flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🛡️🏰</div>
+                            <div class="text-sm font-medium">Defense Guide</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Complete Base Defense & Security Guide</h3>
+                        <p class="text-apple-gray mb-4">Master defensive strategies including optimal trap placement, shield timing, lock systems, and escape routes to protect your valuable Brainrot collection from raiders.</p>
+                        <a href="article-base-defense.html" class="text-apple-blue font-medium hover:underline">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-green-500 bg-clip-text text-transparent">Steal A Brainrot Club</h3>
+                    <p class="text-apple-gray mb-4">The ultimate gaming community for Steal Brainrot Online. Connect, compete, and conquer with players worldwide!</p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:support@stealabrainrot.com" class="text-apple-gray hover:text-apple-blue transition-colors">
+                            📧 Email
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-apple-gray">
+                        <li><a href="#game" class="hover:text-apple-blue transition-colors">Play Game</a></li>
+                        <li><a href="blog.html" class="hover:text-apple-blue transition-colors">Blog & Guides</a></li>
+                        <li><a href="#guides" class="hover:text-apple-blue transition-colors">Strategies</a></li>
+                        <li><a href="contact.html" class="hover:text-apple-blue transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-apple-gray">
+                        <li><a href="privacy-policy.html" class="hover:text-apple-blue transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-apple-blue transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-apple-gray">
+                <p>&copy; 2024 Steal A Brainrot Club. All rights reserved. | <a href="privacy-policy.html" class="hover:text-apple-blue transition-colors">Privacy Policy</a> | <a href="terms-of-service.html" class="hover:text-apple-blue transition-colors">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling and mobile menu -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Game iframe optimization and language control
+        const gameIframe = document.getElementById('game-iframe');
+        const gameLoading = document.getElementById('game-loading');
+        const gameReload = document.getElementById('game-reload');
+        let gameLoadTimeout;
+
+        // Function to reload the game
+        function reloadGame() {
+            console.log('Reloading game...');
+            gameLoading.classList.remove('hidden');
+            gameReload.classList.add('hidden');
+
+            // Clear any existing timeout
+            if (gameLoadTimeout) {
+                clearTimeout(gameLoadTimeout);
+            }
+
+            // Reload the iframe with cache busting and device-specific URL
+            const timestamp = new Date().getTime();
+            const isMobile = window.innerWidth <= 768;
+
+            let gameUrl;
+            if (isMobile) {
+                // Mobile-specific URL
+                gameUrl = `https://games.crazygames.com/en_US/steal-brainrot-online/index.html?utm_source=mobile-qr-code&isNewUser=false&v=1.343&t=${timestamp}`;
+            } else {
+                // Desktop URL
+                gameUrl = `https://games.crazygames.com/en_US/steal-brainrot-online/index.html?isNewUser=false&v=1.343&lang=en&locale=en_US&language=en&region=US&country=US&t=${timestamp}`;
+            }
+
+            gameIframe.src = gameUrl;
+        }
+
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            const gameContainer = document.querySelector('.game-container');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+            const fullscreenIcon = document.getElementById('fullscreen-icon');
+
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (gameContainer.requestFullscreen) {
+                    gameContainer.requestFullscreen();
+                } else if (gameContainer.webkitRequestFullscreen) {
+                    gameContainer.webkitRequestFullscreen();
+                } else if (gameContainer.msRequestFullscreen) {
+                    gameContainer.msRequestFullscreen();
+                }
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Listen for fullscreen changes
+        document.addEventListener('fullscreenchange', updateFullscreenButton);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+        document.addEventListener('msfullscreenchange', updateFullscreenButton);
+
+        function updateFullscreenButton() {
+            const fullscreenIcon = document.getElementById('fullscreen-icon');
+            const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+
+            if (fullscreenIcon) {
+                fullscreenIcon.textContent = isFullscreen ? '⛷' : '⛶';
+                fullscreenIcon.parentElement.title = isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen';
+            }
+        }
+
+        // Keyboard shortcuts for fullscreen
+        document.addEventListener('keydown', function(e) {
+            // F11 key for fullscreen toggle
+            if (e.key === 'F11') {
+                e.preventDefault();
+                toggleFullscreen();
+            }
+            // Escape key to exit fullscreen
+            if (e.key === 'Escape' && document.fullscreenElement) {
+                e.preventDefault();
+                toggleFullscreen();
+            }
+        });
+
+
+
+        // Start mobile game function
+        function startMobileGame(mode = 'single') {
+            const mobileLauncher = document.getElementById('mobile-game-launcher');
+            const gameLoading = document.getElementById('game-loading');
+            const gameContainer = document.querySelector('.game-container');
+
+            // Hide mobile launcher
+            mobileLauncher.style.display = 'none';
+
+            // Show loading indicator
+            gameLoading.classList.remove('hidden');
+
+            // Setup game iframe for mobile
+            if (gameIframe && gameContainer) {
+                let gameUrl;
+                if (mode === 'multiplayer') {
+                    // Multiplayer mode URL
+                    gameUrl = 'https://games.crazygames.com/en_US/steal-brainrot-online/index.html?utm_source=mobile-qr-code&isNewUser=false&v=1.343&mode=multiplayer';
+                } else {
+                    // Single player mode URL
+                    gameUrl = 'https://games.crazygames.com/en_US/steal-brainrot-online/index.html?utm_source=mobile-qr-code&isNewUser=false&v=1.343';
+                }
+
+                gameIframe.src = gameUrl;
+                gameIframe.setAttribute('data-mobile', 'true');
+                gameIframe.classList.add('GameContainerMobile_gameIframe__kYvt0', 'bs-GameContainer--game');
+                gameContainer.setAttribute('data-mobile', 'true');
+
+                // 移动端不遮挡任何内容
+                gameContainer.style.setProperty('--bottom-mask-height', '0px');
+
+                // Hide loading after a delay
+                setTimeout(() => {
+                    gameLoading.classList.add('hidden');
+                }, 3000);
+
+                console.log('Mobile game started:', {
+                    mode: mode,
+                    gameUrl: gameUrl
+                });
+            }
+        }
+
+        // Redirect to CrazyGames for optimal mobile experience
+        function redirectToCrazyGames(mode = 'single') {
+            // Show loading message
+            const mobileLauncher = document.getElementById('mobile-game-launcher');
+            const originalContent = mobileLauncher.innerHTML;
+
+            mobileLauncher.innerHTML = `
+                <div class="text-center">
+                    <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Redirecting to CrazyGames...</h3>
+                    <p class="text-purple-200">You'll get the best mobile gaming experience there!</p>
+                    <p class="text-sm text-purple-300 mt-4">If redirect doesn't work, <a href="https://www.crazygames.com/game/steal-brainrot-online" class="underline text-yellow-300">click here</a></p>
+                </div>
+            `;
+
+            // Redirect after a short delay
+            setTimeout(() => {
+                window.open('https://www.crazygames.com/game/steal-brainrot-online', '_blank');
+
+                // Restore original content after redirect
+                setTimeout(() => {
+                    mobileLauncher.innerHTML = originalContent;
+                }, 2000);
+            }, 1500);
+
+            // Analytics/tracking
+            console.log('Mobile user redirected to CrazyGames:', mode);
+        }
+
+        // Make functions global
+        window.reloadGame = reloadGame;
+        window.toggleFullscreen = toggleFullscreen;
+        window.startMobileGame = startMobileGame;
+        window.redirectToCrazyGames = redirectToCrazyGames;
+
+        // Device detection and iframe source setup
+        function setupGameIframe() {
+            const isMobile = window.innerWidth <= 768;
+            const gameContainer = document.querySelector('.game-container');
+            const mobileLauncher = document.getElementById('mobile-game-launcher');
+            const gameLoading = document.getElementById('game-loading');
+
+            if (gameIframe && gameContainer) {
+                if (isMobile) {
+                    // 移动端：显示启动界面，不自动加载游戏
+                    mobileLauncher.style.display = 'flex';
+                    gameLoading.classList.add('hidden');
+
+                    // 设置移动端属性但不加载游戏
+                    gameContainer.setAttribute('data-mobile', 'true');
+                    gameContainer.style.setProperty('--bottom-mask-height', '0px');
+
+                    // 清空iframe源，等待用户点击启动
+                    gameIframe.src = '';
+
+                    console.log('Mobile launcher displayed');
+                } else {
+                    // 桌面端：隐藏启动界面，自动加载游戏
+                    mobileLauncher.style.display = 'none';
+                    gameLoading.classList.remove('hidden');
+
+                    // Desktop URL with desktop parameters
+                    const gameUrl = 'https://games.crazygames.com/en_US/steal-brainrot-online/index.html?isNewUser=false&v=1.343&lang=en&locale=en_US&language=en&region=US&country=US';
+                    gameIframe.setAttribute('data-desktop', 'true');
+                    gameIframe.classList.remove('GameContainerMobile_gameIframe__kYvt0', 'bs-GameContainer--game');
+                    gameContainer.removeAttribute('data-mobile');
+
+                    // 桌面端恢复底部遮挡以隐藏CrazyGames UI
+                    gameContainer.style.setProperty('--bottom-mask-height', '60px');
+
+                    gameIframe.src = gameUrl;
+
+                    // Hide loading after delay
+                    setTimeout(() => {
+                        gameLoading.classList.add('hidden');
+                    }, 2000);
+
+                    console.log('Desktop game loaded:', gameUrl);
+                }
+
+                gameIframe.style.touchAction = 'manipulation';
+
+                if (isMobile) {
+                    // Prevent zoom on double tap for mobile
+                    document.addEventListener('touchstart', function(e) {
+                        if (e.touches.length > 1) {
+                            e.preventDefault();
+                        }
+                    }, { passive: false });
+
+                    let lastTouchEnd = 0;
+                    document.addEventListener('touchend', function(e) {
+                        const now = (new Date()).getTime();
+                        if (now - lastTouchEnd <= 300) {
+                            e.preventDefault();
+                        }
+                        lastTouchEnd = now;
+                    }, false);
+                }
+            }
+        }
+
+        // Setup game iframe based on device
+        setupGameIframe();
+
+        // Re-setup on window resize
+        window.addEventListener('resize', function() {
+            // Only re-setup if device type changed
+            const wasMobile = gameIframe.hasAttribute('data-mobile');
+            const isMobile = window.innerWidth <= 768;
+            if (wasMobile !== isMobile) {
+                setupGameIframe();
+            }
+        });
+
+        if (gameIframe) {
+            // Set additional attributes to help with language detection
+            gameIframe.setAttribute('data-language', 'en');
+            gameIframe.setAttribute('data-locale', 'en_US');
+
+            // Handle iframe load event
+            gameIframe.addEventListener('load', function() {
+                console.log('Steal Brainrot game loaded successfully');
+
+                // Hide loading indicator after a short delay
+                setTimeout(() => {
+                    gameLoading.classList.add('hidden');
+                    gameReload.classList.remove('hidden');
+                }, 2000);
+
+                // Try to communicate with the iframe to set language (if possible)
+                try {
+                    gameIframe.contentWindow.postMessage({
+                        type: 'setLanguage',
+                        language: 'en',
+                        locale: 'en_US',
+                        region: 'US',
+                        country: 'US'
+                    }, '*');
+                } catch (e) {
+                    console.log('Cross-origin communication blocked (expected)');
+                }
+            });
+
+            // Handle iframe error
+            gameIframe.addEventListener('error', function() {
+                console.log('Game loading error occurred');
+                gameLoading.innerHTML = `
+                    <div class="text-center text-white">
+                        <div class="text-red-500 text-4xl mb-4">⚠️</div>
+                        <p class="text-lg mb-4">Game loading failed</p>
+                        <button onclick="reloadGame()" class="bg-apple-blue text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            Try Again
+                        </button>
+                    </div>
+                `;
+            });
+
+            // Set a timeout to show reload button if game takes too long
+            gameLoadTimeout = setTimeout(() => {
+                if (!gameLoading.classList.contains('hidden')) {
+                    gameLoading.classList.add('hidden');
+                    gameReload.classList.remove('hidden');
+                    console.log('Game loading timeout - showing reload option');
+                }
+            }, 15000); // 15 seconds timeout
+        }
+
+        // Dark mode detection (optional)
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Steal A Brainrot Club",
+        "url": "https://stealabrainrot.com/",
+        "description": "Steal Brainrot Online is a fast-paced, casual heist game where you collect rare Brainrot memes like Tralalero Tralala and Cappuccino Assassino. Buy Brainrots from the red carpet, sneak into other players' bases to steal theirs, and protect your own with traps and locks.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://stealabrainrot.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Steal A Brainrot",
+        "alternateName": ["Steal A Brainrot Game", "Steal A Brainrot Online"],
+        "description": "Steal Brainrot Online is a fast-paced, casual heist game where you collect rare Brainrot memes like Tralalero Tralala and Cappuccino Assassino, straight from the popular Italian Brainrot Clicker Game. You can buy Brainrots from the red carpet, sneak into other players' bases to steal theirs, and protect your own with traps and locks.",
+        "url": "https://stealabrainrot.com/",
+        "genre": ["Casual", "Multiplayer", "Strategy", "Brainrot Game"],
+        "gamePlatform": "Web Browser",
+        "operatingSystem": "Any",
+        "applicationCategory": "Game",
+        "keywords": "steal a brainrot, steal a brainrot game, steal a brainrot online, brainrot stealing game"
+    }
+    </script>
+</body>
+</html>
