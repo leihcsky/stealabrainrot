@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="language" content="en">
+    <title>About Us - Steal A Brainrot Club | Ultimate Gaming Community</title>
+    <meta name="description" content="Learn about Steal A Brainrot Club - the ultimate gaming community dedicated to bringing players together. Discover our mission, values, and commitment to the gaming community.">
+    <meta name="keywords" content="about steal a brainrot club, gaming community, brainrot gaming, online gaming community, steal a brainrot team">
+    <link rel="canonical" href="https://stealabrainrot.link/about.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Us - Steal A Brainrot Club">
+    <meta property="og:description" content="Learn about Steal A Brainrot Club - the ultimate gaming community dedicated to bringing players together worldwide.">
+    <meta property="og:url" content="https://stealabrainrot.link/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Steal A Brainrot Club">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Steal A Brainrot Club">
+    <meta name="twitter:description" content="Learn about Steal A Brainrot Club - the ultimate gaming community dedicated to bringing players together worldwide.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-green': '#34C759',
+                        'apple-orange': '#FF9500',
+                        'apple-red': '#FF3B30',
+                        'apple-gray': '#8E8E93',
+                        'apple-light-gray': '#F2F2F7',
+                        'apple-dark': '#1C1C1E'
+                    },
+                    fontFamily: {
+                        'sf': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .team-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dark .team-card {
+            background: rgba(28, 28, 30, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .dark .team-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .value-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dark .value-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .value-card:hover {
+            transform: scale(1.02);
+            border-color: #007AFF;
+        }
+    </style>
+</head>
+
+<body class="font-sf bg-apple-light-gray dark:bg-apple-dark text-gray-900 dark:text-white">
+    <!-- Navigation -->
+    <nav class="glass-effect sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity">
+                        <img src="logo.svg" alt="Steal A Brainrot Club" class="h-14 w-auto">
+                    </a>
+                    <div class="hidden sm:block">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400 to-green-500 bg-clip-text text-transparent">
+                            Steal A Brainrot Club
+                        </h1>
+                        <p class="text-sm text-apple-gray font-medium">The Ultimate Gaming Community</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors">Home</a>
+                    <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors">Blog</a>
+                    <a href="about.html" class="text-apple-blue font-semibold">About</a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors py-2">Home</a>
+                    <a href="blog.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors py-2">Blog</a>
+                    <a href="about.html" class="text-apple-blue font-semibold py-2">About</a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-apple-blue transition-colors py-2">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-apple-blue to-apple-green bg-clip-text text-transparent">
+                About Steal A Brainrot Club
+            </h1>
+            <p class="text-xl text-apple-gray mb-8 max-w-3xl mx-auto">
+                We're more than just a gaming community - we're a family of passionate players united by our love for Steal A Brainrot and the joy of gaming together.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
+                <p class="text-lg text-apple-gray max-w-4xl mx-auto">
+                    To create the ultimate gaming community where players of all skill levels can come together, learn, compete, and have fun in the world of Steal A Brainrot.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="value-card rounded-2xl p-8 text-center">
+                    <div class="text-4xl mb-4">🎮</div>
+                    <h3 class="text-xl font-semibold mb-4 text-apple-blue">Gaming Excellence</h3>
+                    <p class="text-apple-gray">
+                        We strive to provide the best gaming experience, comprehensive guides, and expert strategies to help every player improve their skills.
+                    </p>
+                </div>
+                
+                <div class="value-card rounded-2xl p-8 text-center">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-xl font-semibold mb-4 text-apple-green">Community First</h3>
+                    <p class="text-apple-gray">
+                        Our community is built on respect, collaboration, and mutual support. Every player matters, from beginners to pros.
+                    </p>
+                </div>
+                
+                <div class="value-card rounded-2xl p-8 text-center">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold mb-4 text-apple-orange">Innovation</h3>
+                    <p class="text-apple-gray">
+                        We continuously evolve our platform, content, and community features to stay at the forefront of gaming culture.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Our Story</h2>
+                <div class="prose prose-lg max-w-none text-apple-gray">
+                    <p class="text-lg mb-6">
+                        Steal A Brainrot Club was born from a simple idea: create a space where gamers could come together to share their passion for one of the most unique and entertaining games in the brainrot genre.
+                    </p>
+                    <p class="text-lg mb-6">
+                        What started as a small group of friends sharing tips and tricks has grown into a thriving community of thousands of players from around the world. We've witnessed incredible moments - from epic heists to legendary meme collections, from newcomers getting their first rare Brainrot to veterans achieving impossible feats.
+                    </p>
+                    <p class="text-lg mb-6">
+                        Today, we're proud to be the go-to destination for Steal A Brainrot enthusiasts. Our comprehensive guides have helped countless players master the game, our community events bring people together, and our platform continues to evolve with the needs of our members.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Meet Our Team</h2>
+                <p class="text-lg text-apple-gray max-w-3xl mx-auto">
+                    Our dedicated team of gaming enthusiasts, content creators, and community managers work tirelessly to make Steal A Brainrot Club the best it can be.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-card rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-apple-blue to-apple-green rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
+                        🎯
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Strategy Team</h3>
+                    <p class="text-apple-blue font-medium mb-3">Game Experts</p>
+                    <p class="text-apple-gray text-sm">
+                        Our strategy experts analyze game mechanics, develop advanced techniques, and create comprehensive guides to help players excel.
+                    </p>
+                </div>
+                
+                <div class="team-card rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-apple-green to-apple-orange rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
+                        ✍️
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Content Team</h3>
+                    <p class="text-apple-green font-medium mb-3">Writers & Creators</p>
+                    <p class="text-apple-gray text-sm">
+                        Our content creators produce high-quality articles, guides, and resources that keep our community informed and engaged.
+                    </p>
+                </div>
+                
+                <div class="team-card rounded-2xl p-8 text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-apple-orange to-apple-red rounded-full mx-auto mb-4 flex items-center justify-center text-2xl">
+                        🛠️
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Tech Team</h3>
+                    <p class="text-apple-orange font-medium mb-3">Developers & Designers</p>
+                    <p class="text-apple-gray text-sm">
+                        Our technical team ensures our platform runs smoothly, implements new features, and maintains the best user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Community Impact</h2>
+                <p class="text-lg text-apple-gray max-w-3xl mx-auto">
+                    Numbers that showcase the growth and engagement of our amazing community.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-apple-blue mb-2">50K+</div>
+                    <p class="text-apple-gray">Active Players</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-apple-green mb-2">1M+</div>
+                    <p class="text-apple-gray">Guide Views</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-apple-orange mb-2">100+</div>
+                    <p class="text-apple-gray">Expert Guides</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-apple-red mb-2">24/7</div>
+                    <p class="text-apple-gray">Community Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Our Community</h2>
+            <p class="text-lg text-apple-gray mb-8 max-w-3xl mx-auto">
+                Ready to become part of the ultimate Steal A Brainrot gaming community? Start your journey today!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="bg-apple-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition-colors">
+                    Play Now
+                </a>
+                <a href="blog.html" class="bg-white dark:bg-gray-800 text-apple-blue border-2 border-apple-blue px-8 py-3 rounded-full font-semibold hover:bg-apple-blue hover:text-white transition-colors">
+                    Read Guides
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="logo.svg" alt="Steal A Brainrot Club" class="h-10 w-auto">
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-red-500 via-orange-500 via-yellow-400 to-green-500 bg-clip-text text-transparent">
+                            Steal A Brainrot Club
+                        </h3>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        The ultimate gaming community for Steal A Brainrot enthusiasts. Join thousands of players worldwide in the most addictive brainrot game experience.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Discord</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="article-rare-memes.html" class="text-gray-400 hover:text-white transition-colors">Rare Memes Guide</a></li>
+                        <li><a href="article-stealing-techniques.html" class="text-gray-400 hover:text-white transition-colors">Stealing Techniques</a></li>
+                        <li><a href="article-base-defense.html" class="text-gray-400 hover:text-white transition-colors">Base Defense</a></li>
+                        <li><a href="article-admin-abuse-guide.html" class="text-gray-400 hover:text-white transition-colors">Admin Abuse Guide</a></li>
+                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Steal A Brainrot Club. All rights reserved. |
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy</a> |
+                    <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Steal A Brainrot Club",
+        "url": "https://stealabrainrot.link/",
+        "logo": "https://stealabrainrot.link/logo.svg",
+        "description": "The ultimate gaming community for Steal A Brainrot enthusiasts. Join thousands of players worldwide in the most addictive brainrot game experience.",
+        "foundingDate": "2024",
+        "sameAs": [
+            "https://discord.gg/stealabrainrot",
+            "https://twitter.com/stealabrainrot",
+            "https://youtube.com/@stealabrainrot"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "support@stealabrainrot.link",
+            "url": "https://stealabrainrot.link/contact.html"
+        }
+    }
+    </script>
+</body>
+</html>
